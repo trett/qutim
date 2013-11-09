@@ -56,7 +56,7 @@ private:
     mutable QPointer<QAction> m_action;
 };
 
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
 class ClEventFilter : public QObject
 {
 	SimpleTray *tray_;
@@ -132,7 +132,7 @@ SimpleTray::SimpleTray() :
 	m_icon->setContextMenu(contextMenu);
 	qApp->setQuitOnLastWindowClosed(false);
 
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
 	QWidget *clWindow = ServiceManager::getByName("ContactList")->property("widget").value<QWidget*>();
 	clWindow->installEventFilter(new ClEventFilter(this, clWindow));
 	activationStateChangedTime = QDateTime::currentMSecsSinceEpoch();
@@ -164,7 +164,7 @@ void SimpleTray::onActivated(QSystemTrayIcon::ActivationReason reason)
 		Notification *notif = currentNotification();
 		if (!notif) {
 			if (QObject *obj = ServiceManager::getByName("ContactList")) {
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
 				if (QDateTime::currentMSecsSinceEpoch() - activationStateChangedTime < 200) { // tested - enough
 					obj->metaObject()->invokeMethod(obj, "changeVisibility");
 					clActivationStateChanged(true);

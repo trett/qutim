@@ -2,7 +2,6 @@ import qbs.base 1.0
 
 Project {
     name: "qutIM"
-
     property string qutim_version_major: '0'
     property string qutim_version_minor: '3'
     property string qutim_version_release: '2'
@@ -25,7 +24,6 @@ Project {
 
     property bool singleProfile: true
     moduleSearchPaths: "modules"
-
     references: [
         "core/3rdparty/3rdparty.qbs",
         "core/core.qbs",

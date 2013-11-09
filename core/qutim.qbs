@@ -21,7 +21,8 @@ Application {
     files: [
         "main.cpp"
     ]
-
+    cpp.commonCompilerFlags: "-o icon.res"
+    consoleApplication: false
     Group {
         name: "Source"
         prefix: project.declarativeUi ? "src/declarative/" : "src/widgets/"
