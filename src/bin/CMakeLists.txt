@@ -1,0 +1,7 @@
+find_package(Qt5 COMPONENTS Widgets Gui Core Quick Qml REQUIRED)
+add_compile_definitions(QUTIM_PLUGIN_NAME="qutim")
+file(GLOB SRC src/widgets/*.cpp)
+list (APPEND SRC main.cpp)
+add_executable(qutim "${SRC}")
+target_include_directories(qutim PRIVATE "../lib" "${QUTIM_INCLUDE}")
+target_link_libraries(qutim Qt5::Core Qt5::Gui Qt5::Widgets libqutim Qtsolutions)

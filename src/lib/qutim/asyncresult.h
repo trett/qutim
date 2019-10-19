@@ -137,7 +137,7 @@ private:
 	void call(Function function)
 	{
 		TuplePtr args = m_args;
-		auto lambda = [args, function] () {
+		auto lambda = [args, function, this] () {
 			AsyncResultData::call(args, SequenceType(), function);
 		};
 		Callback callback(lambda);

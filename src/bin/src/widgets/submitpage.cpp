@@ -24,7 +24,7 @@
 ****************************************************************************/
 
 #include "submitpage.h"
-#include <qutim/libqutim_version.h>
+#include "libqutim_version.h"
 #include <QVBoxLayout>
 #include <QCheckBox>
 #include <QLabel>
