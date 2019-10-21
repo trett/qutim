@@ -1,0 +1,6 @@
+add_subdirectory(dbusnotifications)
+# add_subdirectory(indicator)
+add_subdirectory(linuxintegration)
+# add_subdirectory(macintegration)
+add_subdirectory(softkeysactionbox)
+# add_subdirectory(winintegration) 
