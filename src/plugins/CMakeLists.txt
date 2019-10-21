@@ -1,5 +1,5 @@
 find_package(Qt5 COMPONENTS Core)
 include_directories("../lib" ${QUTIM_INCLUDE})
 add_subdirectory(generic)
-add_subdirectory(integrations)
+#add_subdirectory(integrations)
 add_subdirectory(protocols)
