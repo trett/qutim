@@ -1,5 +1,5 @@
-find_package(Qt5 COMPONENTS Gui Widgets Qml REQUIRED)
+find_package(Qt5 COMPONENTS Widgets Qml REQUIRED)
 add_library(jabber jplugin.cpp)
 add_compile_definitions(QUTIM_PLUGIN_NAME="jabber")
-target_link_libraries(jabber Qt5::Core Qt5::Gui Qt5::Widgets Qt5::Qml jreen)
+target_link_libraries(jabber Qt5::Widgets Qt5::Qml jreen)
 target_include_directories(jabber PRIVATE ${JREEN_INCLUDE_DIRS})
