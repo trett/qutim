@@ -1,5 +1,6 @@
 find_package(Qt5 COMPONENTS Widgets Qml REQUIRED)
-add_library(jabber jplugin.cpp)
+aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR} SRC)
+add_library(jabber ${SRC})
 add_compile_definitions(QUTIM_PLUGIN_NAME="jabber")
 target_link_libraries(jabber Qt5::Widgets Qt5::Qml jreen)
 target_include_directories(jabber PRIVATE ${JREEN_INCLUDE_DIRS})

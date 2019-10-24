@@ -1,0 +1,5 @@
+find_package(Qt5 REQUIRED Widget)
+aux_source_directory("" SRC)
+message(${SRC})
+add_library(textchat ${SRC})
+target_link_libraries(textchat Qt5::Widget)
